@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skrew</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@900&display=swap" rel="stylesheet">
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            background-image: url('bg.png');
+            background-repeat: no-repeat;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px; /* Added padding for smaller screens */
+        }
+
+        * {
+            font-family: 'Cairo', sans-serif;
+        }
+
+        nav {
+        position: absolute;
+        top: 20px; /* Push the nav slightly down from the top */
+        background-color: rgba(64, 13, 81, 0.8); /* Dark purple with transparency */
+        padding: 1px 10px;
+        border-radius: 50px; /* Rounded style for the nav */
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        z-index: 1000; /* Ensure the nav stays on top */
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        padding: 0; /* Remove default padding */
+    }
+
+    nav ul li {
+        margin: 0 15px; /* Set equal margins on the left and right */
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #FFFFFF; /* White for the links */
+        font-size: 20px;
+        font-weight: bold;
+        padding: 10px 20px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        border-radius: 30px;
+    }
+
+    nav ul li a:hover {
+        color: #D6A3FF; /* Light purple on hover */
+    }
+
+        nav ul li a:hover {
+            color: #D6A3FF; /* Light purple on hover */
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 16px;
+            background-color: transparent; /* Medium purple */
+            color: #ECF0F1; /* Light purple text */
+        }
+
+        th, td {
+            border: 1px solid #ECF0F1; /* BlueViolet border */
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: rgb(88, 164, 4);
+        }
+
+        input[type="text"], input[type="number"] {
+            border: none;
+            background-color: transparent; /* Medium purple */
+            color: #ECF0F1; /* Light purple text */
+            font-family: 'Cairo', sans-serif;
+            width: 100%;
+            text-align: center;
+            font-size: large;
+        }
+
+        input[type="text"]:focus, input[type="number"]:focus {
+            outline: none;
+            background-color: transparent; /* Darker purple on focus */
+            color: #ECF0F1; /* Light purple text */
+        }
+
+        .reset-button {
+            margin-top: 20px;
+            width: 250px;
+            height: 50px;
+            background-color: rgba(75, 0, 130, 0.8); /* Dark purple background */
+            color: #ECF0F1; /* Light purple text */
+            border-radius: 20px;
+            transition: background-color 0.4s, transform 0.3s; /* Transition for background and scaling */
+            font-size: 20px;
+            border: none; /* Remove border */
+            cursor: pointer; /* Change cursor to pointer */
+        }
+
+        .reset-button:hover {
+            border-radius: 50px 20px;
+            color: rgba(75, 0, 130, 0.8);
+            background-color: #ECF0F1; /* Changes to yellow on hover */
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 600px) {
+            nav {
+                padding: 5px 5px; /* Further reduced padding for mobile */
+            }
+
+            nav ul li {
+                margin: 0 5px; /* Smaller margins for mobile */
+            }
+
+            nav ul li a {
+                font-size: 14px; /* Smaller font size for mobile */
+                padding: 5px 10px; /* Smaller padding */
+            }
+        }
+
+        @media (min-width: 601px) {
+            nav ul li {
+                margin: 0 20px; /* Increased margin for larger screens */
+            }
+
+            nav ul li a {
+                font-size: 22px; /* Larger font size for desktop */
+                padding: 10px 25px; /* Larger padding for desktop */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Centered Navigation Bar with Custom Style -->
+    <nav>
+        <ul>
+            <li><a href="rules.html">القواعد</a></li>
+            <li><a href="#" class="instagram-link">الحسابات</a></li>
+            <li><a href="suggestions.html">الاقتراحات</a></li>
+            <li><a href="index.html">الرئيسية</a></li>
+        </ul>
+    </nav>
+
+    <table>
+        <thead>
+            <tr>
+                <td><input type="text" id="row1_col1"></td>
+                <td><input type="text" id="row1_col2"></td>
+                <td><input type="text" id="row1_col3"></td>
+                <td><input type="text" id="row1_col4"></td>
+                <td><input type="text" id="row1_col5"></td>
+                <td id="nothing">الاسم</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="number" id="row2_col1"></td>
+                <td><input type="number" id="row2_col2"></td>
+                <td><input type="number" id="row2_col3"></td>
+                <td><input type="number" id="row2_col4"></td>
+                <td><input type="number" id="row2_col5"></td>
+                <td>الأولى</td>
+            </tr>
+            <tr>
+                <td><input type="number" id="row3_col1"></td>
+                <td><input type="number" id="row3_col2"></td>
+                <td><input type="number" id="row3_col3"></td>
+                <td><input type="number" id="row3_col4"></td>
+                <td><input type="number" id="row3_col5"></td>
+                <td>الثانية</td>
+            </tr>
+            <tr>
+                <td><input type="number" id="row4_col1"></td>
+                <td><input type="number" id="row4_col2"></td>
+                <td><input type="number" id="row4_col3"></td>
+                <td><input type="number" id="row4_col4"></td>
+                <td><input type="number" id="row4_col5"></td>
+                <td>الثالثة</td>
+            </tr>
+            <tr>
+                <td><input type="number" id="row5_col1"></td>
+                <td><input type="number" id="row5_col2"></td>
+                <td><input type="number" id="row5_col3"></td>
+                <td><input type="number" id="row5_col4"></td>
+                <td><input type="number" id="row5_col5"></td>
+                <td>الرابعة</td>
+            </tr>
+            <tr>
+                <td><input type="number" id="row6_col1"></td>
+                <td><input type="number" id="row6_col2"></td>
+                <td><input type="number" id="row6_col3"></td>
+                <td><input type="number" id="row6_col4"></td>
+                <td><input type="number" id="row6_col5"></td>
+                <td>الخامسة</td>
+            </tr>
+            <tr>
+                <th id="score1" class="mnr"></th>
+                <th id="score2"></th>
+                <th id="score3"></th>
+                <th id="score4"></th>
+                <th id="score5"></th>
+                <th>المجموع</th>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="reset-buttons">
+        <button class="reset-button" onclick="resetScores()">إعادة تعيين</button>
+    </div>
+
+    <script>
+        function calculateSums() {
+            const column1IDs = ['row2_col1', 'row3_col1', 'row4_col1', 'row5_col1', 'row6_col1'];
+            const column2IDs = ['row2_col2', 'row3_col2', 'row4_col2', 'row5_col2', 'row6_col2'];
+            const column3IDs = ['row2_col3', 'row3_col3', 'row4_col3', 'row5_col3', 'row6_col3'];
+            const column4IDs = ['row2_col4', 'row3_col4', 'row4_col4', 'row5_col4', 'row6_col4'];
+            const column5IDs = ['row2_col5', 'row3_col5', 'row4_col5', 'row5_col5', 'row6_col5'];
+    
+            let sum1 = 0, sum2 = 0, sum3 = 0, sum4 = 0, sum5 = 0;
+    
+            for (let i = 0; i < column1IDs.length; i++) {
+                const value1 = parseFloat(document.getElementById(column1IDs[i]).value) || 0;
+                const value2 = parseFloat(document.getElementById(column2IDs[i]).value) || 0;
+                const value3 = parseFloat(document.getElementById(column3IDs[i]).value) || 0;
+                const value4 = parseFloat(document.getElementById(column4IDs[i]).value) || 0;
+                const value5 = parseFloat(document.getElementById(column5IDs[i]).value) || 0;
+    
+                sum1 += value1;
+                sum2 += value2;
+                sum3 += value3;
+                sum4 += value4;
+                sum5 += value5;
+            }
+    
+            document.getElementById('score1').textContent = sum1;
+            document.getElementById('score2').textContent = sum2;
+            document.getElementById('score3').textContent = sum3;
+            document.getElementById('score4').textContent = sum4;
+            document.getElementById('score5').textContent = sum5;
+    
+            checkAndColorScores();
+        }
+    
+        function checkAndColorScores() {
+            const score1 = parseFloat(document.getElementById('score1').textContent);
+            const score2 = parseFloat(document.getElementById('score2').textContent);
+            const score3 = parseFloat(document.getElementById('score3').textContent);
+            const score4 = parseFloat(document.getElementById('score4').textContent);
+            const score5 = parseFloat(document.getElementById('score5').textContent);
+            const thScore1 = document.querySelector('th#score1');
+            const thScore2 = document.querySelector('th#score2');
+            const thScore3 = document.querySelector('th#score3');
+            const thScore4 = document.querySelector('th#score4');
+            const thScore5 = document.querySelector('th#score5');
+            const thTotal = document.querySelector('th:last-child'); // Select the "مجموع" th
+
+            // Change colors for win condition
+            const scores = [score1, score2, score3, score4, score5];
+            const minScore = Math.min(...scores);
+            const winners = scores.map((score, index) => score === minScore ? index : -1).filter(index => index !== -1);
+    
+            if (winners.length === scores.length) { // All scores are tied
+                thScore1.style.backgroundColor = 'transparent'; 
+                thScore2.style.backgroundColor = 'transparent'; 
+                thScore3.style.backgroundColor = 'transparent'; 
+                thScore4.style.backgroundColor = 'transparent'; 
+                thScore5.style.backgroundColor = 'transparent'; 
+                thTotal.style.backgroundColor = 'transparent'; 
+            } else {
+                thScore1.style.backgroundColor = winners.includes(0) ? 'rgb(88, 164, 4)' : 'transparent';
+                thScore2.style.backgroundColor = winners.includes(1) ? 'rgb(88, 164, 4)' : 'transparent';
+                thScore3.style.backgroundColor = winners.includes(2) ? 'rgb(88, 164, 4)' : 'transparent';
+                thScore4.style.backgroundColor = winners.includes(3) ? 'rgb(88, 164, 4)' : 'transparent';
+                thScore5.style.backgroundColor = winners.includes(4) ? 'rgb(88, 164, 4)' : 'transparent';
+                thTotal.style.backgroundColor = 'initial'; // Reset to default if not tied
+            }
+        }
+    
+        function resetScores() {
+            const thScore1 = document.querySelector('th#score1');
+            const thScore2 = document.querySelector('th#score2');
+            const thScore3 = document.querySelector('th#score3');
+            const thScore4 = document.querySelector('th#score4');
+            const thScore5 = document.querySelector('th#score5');
+            const thTotal = document.querySelector('th:last-child'); // Select the "مجموع" th
+            document.querySelectorAll('input[type="number"]').forEach(input => input.value = '');
+            document.getElementById('score1').textContent = '0';
+            document.getElementById('score2').textContent = '0';
+            document.getElementById('score3').textContent = '0';
+            document.getElementById('score4').textContent = '0';
+            document.getElementById('score5').textContent = '0';
+            thScore1.style.backgroundColor = 'transparent';
+            thScore2.style.backgroundColor = 'transparent';
+            thScore3.style.backgroundColor = 'transparent';
+            thScore4.style.backgroundColor = 'transparent';
+            thScore5.style.backgroundColor = 'transparent';
+            thTotal.style.backgroundColor = 'initial'; // Reset "مجموع" to default
+        }
+    
+        const inputs = document.querySelectorAll('input[type="number"]');
+        inputs.forEach(input => {
+            input.addEventListener('input', calculateSums);
+        });
+    
+        // Initialize sums
+        calculateSums();
+    </script>
+</body>
+</html>

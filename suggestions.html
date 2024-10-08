@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الإقتراحات</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Cairo', sans-serif;
+            box-sizing: border-box;
+        }
+        body {
+            background-image: url('bg.png');
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-repeat: no-repeat;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            flex-direction: column;
+            padding: 10px; /* Add padding to prevent content from touching the edges */
+        }
+        .container {
+            background: #D6A3FF; /* Light purple for the container background */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto; /* Center the container horizontally */
+        }
+        h1 {
+            color: #5C2E91; /* Medium purple for the heading */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #D6A3FF; /* Light purple border */
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: #EAE5FF; /* Very light purple background for input fields */
+        }
+        textarea {
+            resize: vertical;
+            height: 150px;
+        }
+        button {
+            background-color: #5C2E91; /* Medium purple for the button */
+            color: white; /* White text for contrast */
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #883997; /* Darker shade on hover */
+        }
+        nav {
+            position: absolute;
+            top: 20px; /* Push the nav slightly down from the top */
+            background-color: rgba(64, 13, 81, 0.8); /* Dark purple with transparency */
+            padding: 1px 10px;
+            border-radius: 50px; /* Rounded style for the nav */
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000; /* Ensure the nav stays on top */
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0; /* Remove default padding */
+        }
+
+        nav ul li {
+            margin: 0 15px; /* Set equal margins on the left and right */
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #FFFFFF; /* White for the links */
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border-radius: 30px;
+        }
+
+        nav ul li a:hover {
+            color: #D6A3FF; /* Light purple on hover */
+        }
+
+        ::placeholder {
+            color: #5C2E91; /* Placeholder text color matching the theme */
+            opacity: 1; /* Ensures the color is fully opaque */
+        }
+
+        /* Responsive styles */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+                max-width: 100%;
+            }
+            input[type="text"],
+            textarea {
+                font-size: 14px;
+                padding: 8px;
+            }
+            button {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="rules.html">القواعد</a></li>
+            <li><a href="#" class="instagram-link">الحسابات</a></li>
+            <li><a href="suggestions.html">الاقتراحات</a></li>
+            <li><a href="index.html">الرئيسية</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>اكتب اقتراحك</h1>
+        <form action="https://formsubmit.co/moazalnamer2@gmail.com" method="POST">
+            <input style="direction: rtl;" type="text" name="name" placeholder="اكتب اسمك" required>
+            <textarea style="direction: rtl;" name="suggestion" placeholder="اكتب اقتراحك" required></textarea>
+            <button type="submit">ارسال الاقتراح</button>
+        </form>
+    </div>
+    <script>
+        document.querySelector('.instagram-link').onclick = function() {
+            window.open('https://www.instagram.com/qfqz__', '_blank');
+            return false; // Prevent default anchor action
+        };
+    </script>
+</body>
+</html>

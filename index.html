@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skrew</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@900&display=swap" rel="stylesheet">
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            background-image: url('bg.png');
+            background-repeat: no-repeat;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px; /* Added padding for smaller screens */
+        }
+
+        * {
+            font-family: 'Cairo', sans-serif;
+        }
+
+        nav {
+        position: absolute;
+        top: 20px; /* Push the nav slightly down from the top */
+        background-color: rgba(64, 13, 81, 0.8); /* Dark purple with transparency */
+        padding: 1px 10px;
+        border-radius: 50px; /* Rounded style for the nav */
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        z-index: 1000; /* Ensure the nav stays on top */
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        padding: 0; /* Remove default padding */
+    }
+
+    nav ul li {
+        margin: 0 15px; /* Set equal margins on the left and right */
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #FFFFFF; /* White for the links */
+        font-size: 20px;
+        font-weight: bold;
+        padding: 10px 20px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        border-radius: 30px;
+    }
+
+    nav ul li a:hover {
+        color: #D6A3FF; /* Light purple on hover */
+    }
+
+        nav ul li a:hover {
+            color: #D6A3FF; /* Light purple on hover */
+        }
+
+        h1 {
+            color: #400D51; /* Dark purple for heading */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .boX {
+            background-color: #D6A3FF; /* Light purple background for the box */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            animation: animate__animated animate__bounceIn 1s ease;
+            width: 100%; /* Full width for the box */
+            max-width: 400px; /* Set a max-width */
+            box-sizing: border-box; /* Include padding in width */
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #883997; /* Medium purple for the border */
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #D6A3FF;
+            color: #4B0082; /* Indigo color for text */
+            font-family: 'Cairo', sans-serif;
+            text-align: center;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1001; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.7); /* Black with opacity */
+        }
+
+        .modal-content {
+            background-color: #D6A3FF; /* Light purple background for the modal */
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid; /* Border color */
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1002;
+        }
+
+        .modal-content h1 {
+            margin-bottom: 10px;
+            font-size: 20px;
+            color: #400D51; /* Dark purple for the heading */
+        }
+
+        .modal-content p {
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .modal-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .close-btn, .follow-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .close-btn {
+            background-color: #400D51; /* Medium purple */
+            color: white;
+        }
+
+        .close-btn:hover {
+            background-color: #883997; /* Lighter purple on hover */
+        }
+
+        .follow-btn {
+            background-color: #400D51; /* Light blue for follow button */
+            color: white;
+        }
+
+        .follow-btn:hover {
+            background-color: #883997; /* Darker blue on hover */
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 600px) {
+            nav {
+                padding: 5px 10px; /* Reduced padding for mobile */
+            }
+
+            nav ul li {
+                margin: 0 5px; /* Smaller margins for mobile */
+            }
+
+            nav ul li a {
+                font-size: 16px; /* Smaller font size for mobile */
+                padding: 5px 10px; /* Smaller padding */
+            }
+
+            h1 {
+                font-size: 20px; /* Adjust heading size */
+            }
+
+            .boX {
+                padding: 15px; /* Adjust padding for the box */
+            }
+        }
+
+        @media (min-width: 601px) {
+            nav ul li {
+                margin: 0 20px; /* Increased margin for larger screens */
+            }
+
+            nav ul li a {
+                font-size: 22px; /* Larger font size for desktop */
+                padding: 10px 25px; /* Larger padding for desktop */
+            }
+
+            h1 {
+                font-size: 32px; /* Larger heading size for desktop */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Centered Navigation Bar with Custom Style -->
+    <nav>
+        <ul>
+            <li><a href="rules.html">القواعد</a></li>
+            <li><a href="#" class="instagram-link">الحسابات</a></li>
+            <li><a href="suggestions.html">الاقتراحات</a></li>
+        </ul>
+    </nav>
+
+    <div class="boX animate__animated animate__bounceIn">
+        <h1>كم عدد اللاعبين؟</h1>
+        <select id="playerSelect">
+            <option value="zero"></option>
+            <option value="two">. لاعِبَين</option>
+            <option value="three">. ثلاث لاعبين</option>
+            <option value="four">. أربع لاعبين</option>
+            <option value="five">. خمس لاعبين</option>
+            <option value="six">. ستة لاعبين</option>
+            <option value="seven">. سبعة لاعبين</option>
+            <option value="eight">. ثمانية لاعبين</option>
+        </select>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <h1>ياريت تتابعني على الانستجرام تقدير للمجهود</h1>
+            <div class="modal-buttons">
+                <button class="close-btn" id="closeBtn">بعدين</button>
+                <button class="follow-btn" id="followBtn">متابعة</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get the modal and the buttons
+        var modal = document.getElementById("myModal");
+        var closeBtn = document.getElementById("closeBtn");
+        var followBtn = document.getElementById("followBtn");
+        var playerSelect = document.getElementById("playerSelect");
+        var body = document.body;
+
+        // Display the modal when the page loads
+        window.onload = function() {
+            modal.style.display = "block";
+            body.classList.add("modal-open");
+        };
+
+        // Close the modal when the "Close" button is clicked
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+            body.classList.remove("modal-open");
+        };
+
+        // Redirect to Instagram when the "Follow" button is clicked
+        followBtn.onclick = function() {
+            modal.style.display = "none";
+            body.classList.remove("modal-open");
+    window.open("https://www.instagram.com/qfqz__", "_blank");
+};
+
+        // Close the modal if the user clicks anywhere outside of it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+                body.classList.remove("modal-open");
+            }
+        };
+        document.querySelector('.instagram-link').onclick = function() {
+            window.open('https://www.instagram.com/qfqz__', '_blank');
+            return false; // Prevent default anchor action
+        };
+
+        // Handle player selection
+        playerSelect.addEventListener("change", function() {
+            var selectedValue = playerSelect.value;
+            if (selectedValue === "two") {
+                window.location.href = "two.html";
+            } else if (selectedValue === "three") {
+                window.location.href = "three.html";
+            } else if (selectedValue === "four") {
+                window.location.href = "four.html";
+            } else if (selectedValue === "five") {
+                window.location.href = "five.html";
+            } else if (selectedValue === "six") {
+                window.location.href = "six.html";
+            } else if (selectedValue === "seven") {
+                window.location.href = "seven.html";
+            } else if (selectedValue === "eight") {
+                window.location.href = "eight.html";
+            }
+        });
+    </script>
+
+</body>
+</html>

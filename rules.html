@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قواعد اللعبة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@900&display=swap" rel="stylesheet">
+    <style>
+        /* Navigation styles */
+        nav {
+        position: absolute;
+        top: 20px; /* Push the nav slightly down from the top */
+        background-color: rgba(64, 13, 81, 0.8); /* Dark purple with transparency */
+        padding: 1px 10px;
+        border-radius: 50px; /* Rounded style for the nav */
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        z-index: 1000; /* Ensure the nav stays on top */
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        padding: 0; /* Remove default padding */
+    }
+
+    nav ul li {
+        margin: 0 15px; /* Set equal margins on the left and right */
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #FFFFFF; /* White for the links */
+        font-size: 20px;
+        font-weight: bold;
+        padding: 10px 20px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        border-radius: 30px;
+    }
+
+    nav ul li a:hover {
+        color: #D6A3FF; /* Light purple on hover */
+    }
+
+        nav ul li a:hover {
+            color: #D6A3FF; /* Light purple on hover */
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-image: url('bg.png');
+            background-repeat: no-repeat;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px; /* Added padding for smaller screens */            margin: 0;
+            padding-top: 60px; /* Add padding-top equal to nav height to prevent content overlap */
+            padding-bottom: 60px; /* Add padding-bottom for the footer */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 48px; /* Larger font size for the title */
+            font-weight: 700; /* Bold font weight */
+            margin-bottom: 20px;
+            color: #FFFFFF; /* Dark Blue color */
+        }
+
+        .iframe-container {
+            width: 100%;
+            max-width: 779px; /* Maximum width */
+            height: auto; /* Adjust height automatically */
+            aspect-ratio: 779 / 487; /* Maintain 16:9 aspect ratio */
+            border-radius: 8px; /* Optional rounded corners */
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+            background-color: #fff; /* Background color for the container */
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 36px; /* Adjust font size for smaller screens */
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="rules.html">القواعد</a></li>
+            <li><a href="#" class="instagram-link">الحسابات</a></li>
+            <li><a href="suggestions.html">الاقتراحات</a></li>
+            <li><a href="index.html">الرئيسية</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>قواعد اللعبة</h1>
+        <div class="iframe-container">
+            <iframe src="https://www.youtube.com/embed/_T7fGTqezGo" title="ملخص قوانين لعبة سكرو 👌" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+<script>
+            document.querySelector('.instagram-link').onclick = function() {
+            window.open('https://www.instagram.com/qfqz__', '_blank');
+            return false; // Prevent default anchor action
+        };
+</script>
+</body>
+</html>
