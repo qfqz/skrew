@@ -139,12 +139,25 @@
     </nav>
 
     <div class="container">
+    <div class="container">
         <h1>اكتب اقتراحك</h1>
         <form action="https://formsubmit.co/moazalnamer2@gmail.com" method="POST">
-            <input style="direction: rtl;" type="text" name="name" placeholder="اكتب اسمك" required>
+            <input style="direction: rtl;" type="text" name="Name" placeholder="اكتب اسمك" required>
+            <input style="direction: rtl;" type="text" name="Contact Method" placeholder="طريقة للتواصل معاك" required>
+            <select style="direction: rtl;" name="Page" required>
+                <option value="" disabled selected>الاقتراح بخصوص اي صفحة؟</option>
+                <option value="index.html">الرئيسية</option>
+                <option value="two.html">لاعبان</option>
+                <option value="three.html">ثلاثة لاعبين</option>
+                <option value="four.html">أربعة لاعبين</option>
+                <option value="five.html">خمسة لاعبين</option>
+                <option value="six.html">ستة لاعبين</option>
+                <option value="seven.html">سبعة لاعبين</option>
+                <option value="eight.html">ثمانية لاعبين</option>
+            </select>
             <textarea style="direction: rtl;" name="suggestion" placeholder="اكتب اقتراحك" required></textarea>
             <button type="submit">ارسال الاقتراح</button>
-        </form>
+        </form>        
     </div>
     <script>
         document.querySelector('.instagram-link').onclick = function() {
