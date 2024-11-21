@@ -108,6 +108,40 @@
             color: #5C2E91; /* Placeholder text color matching the theme */
             opacity: 1; /* Ensures the color is fully opaque */
         }
+        input[type="text"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #D6A3FF; /* Light purple border */
+    border-radius: 4px;
+    font-size: 16px;
+    color: #5C2E91; /* Placeholder text color matching the theme */
+
+    background-color: #EAE5FF; /* Very light purple background */
+}
+
+/* Adjusted textarea size */
+textarea {
+    resize: vertical;
+    height: 100px; /* Reduced height for suggestion box */
+}
+
+/* Styled select dropdown */
+select {
+    appearance: none; /* Removes default dropdown styling */
+    -webkit-appearance: none; /* For Safari */
+    -moz-appearance: none; /* For Firefox */
+    color: #5C2E91;
+    background: #EAE5FF; /* Matches other inputs */
+    cursor: pointer;
+}
+
+/* Add a small arrow for the dropdown */
+select:focus {
+    outline: none; /* Remove outline on focus */
+}
 
         /* Responsive styles */
         @media (max-width: 600px) {
@@ -137,8 +171,6 @@
             <li><a href="index.html">الرئيسية</a></li>
         </ul>
     </nav>
-
-    <div class="container">
     <div class="container">
         <h1>اكتب اقتراحك</h1>
         <form action="https://formsubmit.co/moazalnamer2@gmail.com" method="POST">
@@ -159,6 +191,7 @@
             <button type="submit">ارسال الاقتراح</button>
         </form>        
     </div>
+    
     <script>
         document.querySelector('.instagram-link').onclick = function() {
             window.open('https://www.instagram.com/qfqz__', '_blank');
